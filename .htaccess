@@ -1,0 +1,7 @@
+# Forzar a Apache a interpretar los archivos HTML correctamente
+AddType text/html .html
+
+# Habilitar políticas para permitir la carga de estilos y scripts externos
+<IfModule mod_headers.c>
+    Header set Content-Type "text/html; charset=UTF-8"
+</IfModule>
