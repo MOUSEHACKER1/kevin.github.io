@@ -8,5 +8,5 @@ services:
       - "8595:80"
     volumes:
       # Monta la carpeta 'html' de tu repositorio de GitHub dentro de Apache
-      - $path/html:/usr/local/apache2/htdocs/
+      - ${STACK_PATH}/html:/usr/local/apache2/htdocs/
     restart: always
