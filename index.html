@@ -1,14 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MySiteWeb</title>
+    <title>Kevin Rojas | Desarrollador de Software & Analista de Sistemas</title>
+    <script src="https://tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cloudflare.com">
 </head>
-<body>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-teal-500 selection:text-slate-950">
 
-    <h1>holaaa</h1>
-    
-</body>
-</html>
+    <!-- NAV BAR -->
+    <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-xl font-bold tracking-tight text-teal-400">KR<span class="text-white">.dev</span></span>
+            <div class="space-x-6 text-sm font-medium text-slate-400">
+                <a href="#perfil" class="hover:text-teal-400 transition">Perfil</a>
+                <a href="#experiencia" class="hover:text-teal-400 transition">Experiencia</a>
+                <a href="#educacion" class="hover:text-teal-400 transition">Educación</a>
+                <a href="#contacto" class="px-4 py-2 bg-teal-500/10 text-teal-400 border border-teal-500/30 rounded-lg hover:bg-teal-500 hover:text-slate-950 transition">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header id="perfil" class="max-w-5xl mx-auto px-6 py-20 lg:py-32 grid md:grid-cols-3 gap-12 items-center">
+        <div class="md:col-span-2 space-y-6">
+            <div class="inline-flex items-center space-x-2 bg-teal-500/10 border border-teal-500/20 text-teal-400 px-3 py-1 rounded-full text-xs font-semibold">
+                <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
+                <span>Disponible para proyectos</span>
+            </div>
+            <h1 class="text-4xl lg:text-6xl font-extrabold text-white tracking-tight">
+                Kevin Andrey Rojas Fajardo
+            </h1>
+            <p class="text-xl lg:text-2xl text-slate-400 font-medium">
+                Desarrollador de Software & Analista de Sistemas
+            </p>
+            <p class="text-slate-400 leading-relaxed text-base max-w-xl">
+                Tecnólogo en sistemas con experiencia sólida en el análisis y desarrollo de software, la gestión de servidores e infraestructura tecnológica, y la optimización de bases de datos. Especializado en agilizar procesos y construir soluciones eficientes.
+            </p>
+            <!-- TECNOLOGÍAS -->
+            <div class="pt-4">
+                <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Stack Tecnológico Principal</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-slate-800 text-teal-300 border border-slate-700 px-3 py-1 rounded-md text-xs font-medium">Laravel</span>
+                    <span class="bg-slate-800 text-teal-300 border border-slate-700 px-3 py-1 rounded-md text-xs font-medium">PHP</span>
+                    <span class="bg-slate-800 text-teal-300 border border-slate-700 px-3 py-1 rounded-md text-xs font-medium">C# / .NET</span>
+                    <span class="bg-slate-800 text-teal-300 border border-slate-700 px-3 py-1 rounded-md text-xs font-medium">Python</span>
+                    <span class="bg-slate-800 text-teal-300 border border-slate-700 px-3 py-1 rounded-md text-xs font-medium">SQL Server</span>
+                    <span class="bg-slate-800 text-teal-300 border border-slate-700 px-3 py-1 rounded-md text-xs font-medium">Docker & Apache</span>
+                    <span class="bg-slate-800 text-teal-300 border border-slate-700 px-3 py-1 rounded-md text-xs font-medium">HTML5 / CSS3</span>
+                </div>
+            </div>
+        </div>
+        <!-- AVATAR / ICON -->
+        <div class="flex justify-center md:justify-end">
+            <div class="relative group">
+                <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-teal-500 to-emerald-500 blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+                <!-- Nota: Puedes reemplazar esta imagen de placeholder por tu foto real en tu repositorio -->
+                <div class="relative w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-2 border-slate-700 bg-slate-800 flex items-center justify-center">
+                    <i class="fa-solid fa-code text-6xl text-slate-600"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- EXPERIENCIA LABORAL -->
+    <section id="experiencia" class="bg-slate-950/40 border-t border-b border-slate-800/60 py-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex items-center space-x-4 mb-12">
+                <div class="p-2 bg-teal-500/10 rounded-lg text-teal-400"><i class="fa-solid fa-briefcase text-xl"></i></div>
+                <h2 class="text-3xl font-bold text-white tracking-tight">Experiencia Laboral</h2>
+            </div>
+            
+            <div class="space-y-12 relative before:absolute before:inset-0 before:left-4 md:before:left-6 before:w-0.5 before:bg-slate-800">
+                <!-- Ladoinsa -->
+                <div class="relative pl-12 md:pl-16 group">
+                    <div class="absolute left-2.5 md:left-4.5 w-3.5 h-3.5 bg-slate-900 border-2 border-teal-400 rounded-full group-hover:bg-teal-400 transition"></div>
+                    <div class="grid md:grid-cols-4 gap-2 md:gap-4">
+                        <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold pt-1">Sept 2025 - Presente</div>
+                        <div class="md:col-span-3 space-y-2">
+                            <h3 class="text-lg font-bold text-white">Analista de Sistemas</h3>
+                            <h4 class="text-sm font-medium text-teal-400">Ladoinsa Labores y Dotaciones Industriales SAS</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Responsable de la gestión y soporte de infraestructura tecnológica, incluyendo servidores, redes, bases de datos y usuarios. Apoyo en automatización de procesos y en la implementación de sistemas empresariales como CRM y ERP.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GEMLSA -->
+                <div class="relative pl-12 md:pl-16 group">
+                    <div class="absolute left-2.5 md:left-4.5 w-3.5 h-3.5 bg-slate-900 border-2 border-slate-700 rounded-full group-hover:border-teal-400 transition"></div>
+                    <div class="grid md:grid-cols-4 gap-2 md:gap-4">
+                        <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold pt-1">Mar 2023 - Sept 2025</div>
+                        <div class="md:col-span-3 space-y-2">
+                            <h3 class="text-lg font-bold text-white">Analista de Hardware</h3>
+                            <h4 class="text-sm font-medium text-slate-400">Grupo GEMLSA SA</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Gestión técnica integral de la infraestructura informática, mantenimiento preventivo/correctivo y administración de sistemas críticos, colaborando estrechamente en proyectos de eficiencia operativa organizacional.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total de Datos -->
+                <div class="relative pl-12 md:pl-16 group">
+                    <div class="absolute left-2.5 md:left-4.5 w-3.5 h-3.5 bg-slate-900 border-2 border-slate-700 rounded-full group-hover:border-teal-400 transition"></div>
+                    <div class="grid md:grid-cols-4 gap-2 md:gap-4">
+                        <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold pt-1">Oct 2020 - Ene 2023</div>
+                        <div class="md:col-span-3 space-y-2">
+                            <h3 class="text-lg font-bold text-white">Auxiliar de Sistemas</h3>
+                            <h4 class="text-sm font-medium text-teal-400">Total de Datos SA</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Administración y soporte de servidores, firewalls, canales de internet y balanceadores de carga. Desarrollo y mantenimiento de aplicaciones sobre .NET Framework con C#, optimización y backups en SQL Server.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCACIÓN Y CERTIFICACIONES -->
+    <section id="educacion" class="max-w-5xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12">
+        <!-- Educación -->
+        <div>
+            <div class="flex items-center space-x-4 mb-8">
+                <div class="p-2 bg-emerald-500/10 rounded-lg text-emerald-400"><i class="fa-solid fa-graduation-cap text-xl"></i></div>
+                <h2 class="text-2xl font-bold text-white tracking-tight">Formación Académica</h2>
+            </div>
+            <div class="space-y-6">
+                <div class="p-5 bg-slate-800/40 border border-slate-800 rounded-xl">
+                    <span class="text-xs font-semibold text-emerald-400 block mb-1">2022 - 2025</span>
+                    <h3 class="text-base font-bold text-white">Tecnólogo en Análisis y Desarrollo de Software</h3>
+                    <p class="text-slate-400 text-sm">SENA – Bogotá D.C.</p>
+                </div>
+                <div class="p-5 bg-slate-800/40 border border-slate-800 rounded-xl">
+                    <span class="text-xs font-semibold text-slate-500 block mb-1">2018 - 2021</span>
