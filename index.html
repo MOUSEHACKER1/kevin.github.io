@@ -1,139 +1,206 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kevin Rojas | Desarrollador de Software & Analista de Sistemas</title>
-    <script src="https://tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cloudflare.com">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kevin Rojas – Desarrollador de software</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#F1F4F0; --ink:#16201A; --muted:#55645B; --line:#CBD6CE;
+  --green:#2F5D46; --mint:#9DB8A8; --panel:#E4EBE5; --on-green:#F1F4F0;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#121815; --ink:#E7EEE8; --muted:#9BAAA0; --line:#2B3A31;
+    --green:#8DB9A0; --mint:#3B5E4B; --panel:#1A231E; --on-green:#121815; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121815; --ink:#E7EEE8; --muted:#9BAAA0; --line:#2B3A31;
+  --green:#8DB9A0; --mint:#3B5E4B; --panel:#1A231E; --on-green:#121815; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+nav b{font:700 18px var(--display)}
+nav div{display:flex;gap:24px;font-size:15px}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero{padding:72px 0 96px;display:grid;grid-template-columns:1fr 220px;gap:48px;align-items:end}
+h1{font:800 clamp(52px,10vw,132px)/.92 var(--display);letter-spacing:-.04em;margin:0;color:var(--green)}
+.hero p{font-size:clamp(20px,2.4vw,26px);line-height:1.4;max-width:30em;margin:32px 0 0}
+.hero p span{color:var(--muted)}
+.photo{aspect-ratio:4/5;background:var(--mint);border-radius:999px 999px 12px 12px;display:grid;place-items:center;font:800 64px var(--display);color:var(--on-green);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.in{animation:in .9s cubic-bezier(.2,.7,.2,1) both}
+@keyframes in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.in{animation:none}html{scroll-behavior:auto}}
+
+/* sections */
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2{font:700 clamp(30px,4.5vw,48px)/1.05 var(--display);letter-spacing:-.025em;margin:0 0 12px}
+.lead{color:var(--muted);max-width:36em;margin:0 0 40px}
+
+/* case studies */
+details{border-top:1px solid var(--line)}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:8px 24px;padding:28px 0;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary h3{font:700 clamp(24px,3.4vw,38px)/1.1 var(--display);letter-spacing:-.02em;margin:0;transition:color .2s}
+summary:hover h3{color:var(--green)}
+summary .when{color:var(--muted);font-size:15px;text-align:right}
+summary .what{grid-column:1/-1;color:var(--muted);margin:0;max-width:40em}
+summary .plus{display:inline-block;width:1em;transition:transform .25s}
+details[open] summary .plus{transform:rotate(45deg)}
+.case{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding:4px 0 40px}
+.case h4{font:700 17px var(--display);margin:0 0 6px;color:var(--green)}
+.case p{margin:0;font-size:16px}
+.tags{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.tags li{background:var(--panel);border-radius:6px;padding:4px 12px;font-size:14px}
+
+/* stack */
+.stack{display:grid;grid-template-columns:repeat(2,1fr);gap:40px 48px}
+.stack h3{font:700 22px var(--display);margin:0 0 8px}
+.stack p{margin:0;color:var(--muted)}
+.stack strong{color:var(--ink);font-weight:500}
+
+/* path */
+.path{display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px}
+.path div{padding:20px 0;border-top:1px solid var(--line)}
+.path b{display:block;font:700 19px/1.25 var(--display)}
+.path span{color:var(--muted);font-size:15px}
+
+/* contact */
+.contact{background:var(--green);color:var(--on-green);border-top:0;border-radius:20px;padding:56px;margin:24px 0 72px}
+.contact h2{font-size:clamp(34px,6vw,72px);margin:0 0 24px}
+.contact .links{display:flex;flex-wrap:wrap;gap:12px}
+.contact a{background:var(--on-green);color:var(--green);text-decoration:none;font-weight:500;padding:12px 22px;border-radius:999px}
+.contact a:hover{filter:brightness(.94)}
+footer{padding:0 0 48px;color:var(--muted);font-size:14px}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding:40px 0 64px}
+  .photo{width:150px;order:-1}
+  .case,.stack,.path{grid-template-columns:1fr}
+  summary{grid-template-columns:1fr}
+  summary .when{text-align:left}
+  .contact{padding:32px 24px}
+  nav div{gap:16px}
+}
+</style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-teal-500 selection:text-slate-950">
+<body>
+<div class="wrap">
+  <nav aria-label="Principal">
+    <b>KR</b>
+    <div><a href="#trabajo">Trabajo</a><a href="#herramientas">Herramientas</a><a href="#ruta">Formación</a><a href="#contacto">Contacto</a></div>
+  </nav>
 
-    <!-- NAV BAR -->
-    <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="text-xl font-bold tracking-tight text-teal-400">KR<span class="text-white">.dev</span></span>
-            <div class="space-x-6 text-sm font-medium text-slate-400">
-                <a href="#perfil" class="hover:text-teal-400 transition">Perfil</a>
-                <a href="#experiencia" class="hover:text-teal-400 transition">Experiencia</a>
-                <a href="#educacion" class="hover:text-teal-400 transition">Educación</a>
-                <a href="#contacto" class="px-4 py-2 bg-teal-500/10 text-teal-400 border border-teal-500/30 rounded-lg hover:bg-teal-500 hover:text-slate-950 transition">Contacto</a>
-            </div>
-        </div>
-    </nav>
+  <header class="hero">
+    <div class="in">
+      <h1>Kevin Rojas</h1>
+      <p>Desarrollador de software en Bogotá. Hago que los sistemas de una empresa funcionen mejor: <span>desde el servidor y la base de datos hasta la aplicación web que usa el equipo.</span></p>
+    </div>
+    <!-- Para usar tu foto: reemplaza KR por <img src="data:image/jpeg;base64,..." alt="Kevin Rojas"> -->
+    <div class="photo in" style="animation-delay:.15s" aria-hidden="true">KR</div>
+  </header>
 
-    <!-- HERO SECTION -->
-    <header id="perfil" class="max-w-5xl mx-auto px-6 py-20 lg:py-32 grid md:grid-cols-3 gap-12 items-center">
-        <div class="md:col-span-2 space-y-6">
-            <div class="inline-flex items-center space-x-2 bg-teal-500/10 border border-teal-500/20 text-teal-400 px-3 py-1 rounded-full text-xs font-semibold">
-                <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
-                <span>Disponible para proyectos</span>
-            </div>
-            <h1 class="text-4xl lg:text-6xl font-extrabold text-white tracking-tight">
-                Kevin Andrey Rojas Fajardo
-            </h1>
-            <p class="text-xl lg:text-2xl text-slate-400 font-medium">
-                Desarrollador de Software & Analista de Sistemas
-            </p>
-            <p class="text-slate-400 leading-relaxed text-base max-w-xl">
-                Tecnólogo en sistemas con experiencia sólida en el análisis y desarrollo de software, la gestión de servidores e infraestructura tecnológica, y la optimización de bases de datos. Especializado en agilizar procesos y construir soluciones eficientes.
-            </p>
-            <!-- TECNOLOGÍAS -->
-            <div class="pt-4">
-                <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Stack Tecnológico Principal</p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-slate-800 text-teal-300 border border-slate-700 px-3 py-1 rounded-md text-xs font-medium">Laravel</span>
-                    <span class="bg-slate-800 text-teal-300 border border-slate-700 px-3 py-1 rounded-md text-xs font-medium">PHP</span>
-                    <span class="bg-slate-800 text-teal-300 border border-slate-700 px-3 py-1 rounded-md text-xs font-medium">C# / .NET</span>
-                    <span class="bg-slate-800 text-teal-300 border border-slate-700 px-3 py-1 rounded-md text-xs font-medium">Python</span>
-                    <span class="bg-slate-800 text-teal-300 border border-slate-700 px-3 py-1 rounded-md text-xs font-medium">SQL Server</span>
-                    <span class="bg-slate-800 text-teal-300 border border-slate-700 px-3 py-1 rounded-md text-xs font-medium">Docker & Apache</span>
-                    <span class="bg-slate-800 text-teal-300 border border-slate-700 px-3 py-1 rounded-md text-xs font-medium">HTML5 / CSS3</span>
-                </div>
-            </div>
-        </div>
-        <!-- AVATAR / ICON -->
-        <div class="flex justify-center md:justify-end">
-            <div class="relative group">
-                <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-teal-500 to-emerald-500 blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
-                <!-- Nota: Puedes reemplazar esta imagen de placeholder por tu foto real en tu repositorio -->
-                <div class="relative w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-2 border-slate-700 bg-slate-800 flex items-center justify-center">
-                    <i class="fa-solid fa-code text-6xl text-slate-600"></i>
-                </div>
-            </div>
-        </div>
-    </header>
+  <section id="trabajo">
+    <h2>Trabajo</h2>
+    <p class="lead">Lo que he hecho en cada empresa: mi rol, el problema, cómo lo abordé y qué aprendí. Abre cada caso para leerlo.</p>
 
-    <!-- EXPERIENCIA LABORAL -->
-    <section id="experiencia" class="bg-slate-950/40 border-t border-b border-slate-800/60 py-20">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="flex items-center space-x-4 mb-12">
-                <div class="p-2 bg-teal-500/10 rounded-lg text-teal-400"><i class="fa-solid fa-briefcase text-xl"></i></div>
-                <h2 class="text-3xl font-bold text-white tracking-tight">Experiencia Laboral</h2>
-            </div>
-            
-            <div class="space-y-12 relative before:absolute before:inset-0 before:left-4 md:before:left-6 before:w-0.5 before:bg-slate-800">
-                <!-- Ladoinsa -->
-                <div class="relative pl-12 md:pl-16 group">
-                    <div class="absolute left-2.5 md:left-4.5 w-3.5 h-3.5 bg-slate-900 border-2 border-teal-400 rounded-full group-hover:bg-teal-400 transition"></div>
-                    <div class="grid md:grid-cols-4 gap-2 md:gap-4">
-                        <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold pt-1">Sept 2025 - Presente</div>
-                        <div class="md:col-span-3 space-y-2">
-                            <h3 class="text-lg font-bold text-white">Analista de Sistemas</h3>
-                            <h4 class="text-sm font-medium text-teal-400">Ladoinsa Labores y Dotaciones Industriales SAS</h4>
-                            <p class="text-slate-400 text-sm leading-relaxed">
-                                Responsable de la gestión y soporte de infraestructura tecnológica, incluyendo servidores, redes, bases de datos y usuarios. Apoyo en automatización de procesos y en la implementación de sistemas empresariales como CRM y ERP.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+    <details open>
+      <summary>
+        <h3>Infraestructura y sistemas empresariales</h3>
+        <span class="when">Ladoinsa · Sep 2025 – hoy <span class="plus">+</span></span>
+        <p class="what">Analista de sistemas en una empresa de labores y dotaciones industriales.</p>
+      </summary>
+      <div class="case">
+        <div><h4>Problema</h4><p>Una empresa necesita que servidores, redes, bases de datos y usuarios funcionen todos los días, y que las tareas repetitivas dejen de depender de trabajo manual.</p></div>
+        <div><h4>Mi enfoque</h4><p>Gestiono y doy soporte a toda la infraestructura tecnológica. Apoyo la automatización de procesos y la implementación de sistemas CRM y ERP.</p></div>
+        <div><h4>Aprendizaje</h4><p>Un buen sistema se mide por lo poco que el usuario tiene que pensar en él. Cada proceso automatizado le devuelve tiempo al equipo.</p></div>
+        <ul class="tags"><li>Servidores</li><li>Redes</li><li>Bases de datos</li><li>CRM</li><li>ERP</li><li>Automatización</li></ul>
+      </div>
+    </details>
 
-                <!-- GEMLSA -->
-                <div class="relative pl-12 md:pl-16 group">
-                    <div class="absolute left-2.5 md:left-4.5 w-3.5 h-3.5 bg-slate-900 border-2 border-slate-700 rounded-full group-hover:border-teal-400 transition"></div>
-                    <div class="grid md:grid-cols-4 gap-2 md:gap-4">
-                        <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold pt-1">Mar 2023 - Sept 2025</div>
-                        <div class="md:col-span-3 space-y-2">
-                            <h3 class="text-lg font-bold text-white">Analista de Hardware</h3>
-                            <h4 class="text-sm font-medium text-slate-400">Grupo GEMLSA SA</h4>
-                            <p class="text-slate-400 text-sm leading-relaxed">
-                                Gestión técnica integral de la infraestructura informática, mantenimiento preventivo/correctivo y administración de sistemas críticos, colaborando estrechamente en proyectos de eficiencia operativa organizacional.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+    <details>
+      <summary>
+        <h3>Soporte de tecnología a escala de grupo</h3>
+        <span class="when">Grupo GEMLSA · Mar 2023 – Sep 2025 <span class="plus">+</span></span>
+        <p class="what">Analista de hardware, reportando a la dirección de infraestructura y tecnología.</p>
+      </summary>
+      <div class="case">
+        <div><h4>Problema</h4><p>Mantener operativos los equipos, servidores y usuarios de una compañía mientras se modernizaban sus procesos.</p></div>
+        <div><h4>Mi enfoque</h4><p>Responsable de la gestión y el soporte de servidores, redes, bases de datos y usuarios, con apoyo en automatización y en la implementación de CRM y ERP.</p></div>
+        <div><h4>Aprendizaje</h4><p>Trabajar cerca de la dirección de tecnología me enseñó a priorizar: no todo lo urgente es lo importante.</p></div>
+        <ul class="tags"><li>Hardware</li><li>Infraestructura</li><li>Soporte a usuarios</li><li>CRM / ERP</li></ul>
+      </div>
+    </details>
 
-                <!-- Total de Datos -->
-                <div class="relative pl-12 md:pl-16 group">
-                    <div class="absolute left-2.5 md:left-4.5 w-3.5 h-3.5 bg-slate-900 border-2 border-slate-700 rounded-full group-hover:border-teal-400 transition"></div>
-                    <div class="grid md:grid-cols-4 gap-2 md:gap-4">
-                        <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold pt-1">Oct 2020 - Ene 2023</div>
-                        <div class="md:col-span-3 space-y-2">
-                            <h3 class="text-lg font-bold text-white">Auxiliar de Sistemas</h3>
-                            <h4 class="text-sm font-medium text-teal-400">Total de Datos SA</h4>
-                            <p class="text-slate-400 text-sm leading-relaxed">
-                                Administración y soporte de servidores, firewalls, canales de internet y balanceadores de carga. Desarrollo y mantenimiento de aplicaciones sobre .NET Framework con C#, optimización y backups en SQL Server.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <details>
+      <summary>
+        <h3>Servidores, datos y primeras aplicaciones en .NET</h3>
+        <span class="when">Total de Datos · Oct 2020 – Ene 2023 <span class="plus">+</span></span>
+        <p class="what">Auxiliar de sistemas. Donde pasé de soporte a desarrollo.</p>
+      </summary>
+      <div class="case">
+        <div><h4>Problema</h4><p>Mantener disponibles los servicios de la empresa: conexión a internet, acceso remoto y bases de datos con copias de respaldo confiables.</p></div>
+        <div><h4>Mi enfoque</h4><p>Administré servidores, firewall, canales de internet, balanceadores de carga y servidores de acceso remoto. Trabajé con .NET Framework y C#, SQL Server, administración de bases de datos y backups.</p></div>
+        <div><h4>Aprendizaje</h4><p>Aquí entendí cómo se conectan el código y la infraestructura. Es lo que hoy me permite desarrollar pensando en cómo se va a desplegar.</p></div>
+        <ul class="tags"><li>C#</li><li>.NET Framework</li><li>SQL Server</li><li>Firewall</li><li>Balanceo de carga</li><li>Backups</li></ul>
+      </div>
+    </details>
+  </section>
 
-    <!-- EDUCACIÓN Y CERTIFICACIONES -->
-    <section id="educacion" class="max-w-5xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12">
-        <!-- Educación -->
-        <div>
-            <div class="flex items-center space-x-4 mb-8">
-                <div class="p-2 bg-emerald-500/10 rounded-lg text-emerald-400"><i class="fa-solid fa-graduation-cap text-xl"></i></div>
-                <h2 class="text-2xl font-bold text-white tracking-tight">Formación Académica</h2>
-            </div>
-            <div class="space-y-6">
-                <div class="p-5 bg-slate-800/40 border border-slate-800 rounded-xl">
-                    <span class="text-xs font-semibold text-emerald-400 block mb-1">2022 - 2025</span>
-                    <h3 class="text-base font-bold text-white">Tecnólogo en Análisis y Desarrollo de Software</h3>
-                    <p class="text-slate-400 text-sm">SENA – Bogotá D.C.</p>
-                </div>
-                <div class="p-5 bg-slate-800/40 border border-slate-800 rounded-xl">
-                    <span class="text-xs font-semibold text-slate-500 block mb-1">2018 - 2021</span>
+  <section id="herramientas">
+    <h2>Herramientas</h2>
+    <p class="lead">Con lo que trabajo, agrupado por para qué lo uso.</p>
+    <div class="stack">
+      <div><h3>Para construir aplicaciones</h3><p><strong>Laravel, PHP, C#, Python y HTML5.</strong> Aplicaciones web de punta a punta, con .NET Framework cuando el proyecto lo pide.</p></div>
+      <div><h3>Para guardar y proteger datos</h3><p><strong>SQL y SQL Server.</strong> Diseño y administración de bases de datos, con copias de respaldo.</p></div>
+      <div><h3>Para mantener todo en pie</h3><p><strong>Servidores Windows y de tipo servidor, redes, firewall y acceso remoto.</strong> Gestión de hardware, software y conectividad.</p></div>
+      <div><h3>Para trabajar con otros</h3><p>Aprendo rápido, trabajo en equipo y me enfoco en cumplir objetivos. Inglés nivel B1.</p></div>
+    </div>
+  </section>
+
+  <section id="ruta">
+    <h2>Formación</h2>
+    <p class="lead">Estudios formales y cursos cortos.</p>
+    <div class="path">
+      <div><b>Tecnólogo en análisis y desarrollo de software</b><span>SENA, Bogotá · Dic 2022 – Nov 2025</span></div>
+      <div><b>Tecnólogo en análisis y desarrollo de sistemas de información</b><span>SENA, Vélez · Oct 2018 – Jul 2021</span></div>
+      <div><b>Técnico en sistemas</b><span>SENA, Granada · Feb 2016 – Nov 2017</span></div>
+      <div><b>Protege tu negocio: ciberseguridad</b><span>Google Activate, Bogotá · 2022</span></div>
+      <div><b>Apropiación de los conceptos en ciberseguridad</b><span>SENA, Bogotá · 2022</span></div>
+      <div><b>Análisis para el desarrollo móvil con App Inventor</b><span>SENA, Bogotá · 2018</span></div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contact">
+    <h2>¿Tienes un sistema que mejorar?</h2>
+    <div class="links">
+      <a href="mailto:Kevinrojasfajardo@gmail.com">Escríbeme por correo</a>
+      <a href="https://wa.me/573214338932">Habla conmigo por WhatsApp</a>
+    </div>
+  </section>
+
+  <footer>Kevin Andrey Rojas Fajardo · Bogotá, Colombia · +57 321 433 89 32</footer>
+</div>
+</body>
+</html>
